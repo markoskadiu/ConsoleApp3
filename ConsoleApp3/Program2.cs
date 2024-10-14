@@ -1,9 +1,12 @@
 ﻿using System.Data;
+using Newtonsoft.Json.Linq;
 
 namespace ConsoleApp3;
 
 public class Ushtrim1
 {
+    /**: Shkruani nje program ne C# qe afishon ne rreshta *Emri *Mbiemri *Mosha*Vendlindja *Profesioni*/
+    
    public static void Ushtrimi1()
    {
       string? emri = "";
@@ -79,6 +82,7 @@ public class Ushtrim1
 
 public class Ushtrim2
 {
+    /**: Krijoni nje program i cili lexon 2 numra dhe tregon mbetjen nga pjestimi i tyre duke perdorur operatorin %, duke supozuar se nr1 > nr2*/
    public static void Ushtrimi2()
     {
         /*User imput 2 nr, ku nr1 > nr2, afishon mbetjen*/
@@ -150,6 +154,7 @@ public class Ushtrim2
 
 public class Ushtrim3
 {
+    /**: Lexoni 5 numra nga perdoruesi dhe afishoni shumen dhe mesataren e tyre.*/
     public static void Ushtrimi3()
     {
         Console.WriteLine("Ca bot si kalut.");
@@ -223,6 +228,7 @@ public class Ushtrim3
 
 public class Ushtrim4
 {
+ /**: Krijoni nje program qe afishon rezultatin e shprehjeve te meposhtme*/
     public static void Ushtrimi4()
     {
         
@@ -257,4 +263,185 @@ public class Ushtrim4
             }
         }
     }
+}
+
+public class Ushtrim5
+{
+    /**: Shkruani nje program qe gjen perimetrin dhe siperfaqen e figurave gjeometrike te meposhtme*/
+    
+    public static void Ushtrimi5()
+    {
+        Console.WriteLine("Ca bot si kalut \n Ky program ka si qellim me gjet perimetrin dhe siperfaqen e fiigurave  te ndryshme gjeometrike ");
+
+        string figura;
+        string[] mundesite = { "d", "t", "r", "tr", "k" };
+
+        do
+        {
+            Console.WriteLine("Vendosni per figuren gjeometrike te deshiruar \n" + 
+                              "[D]rejtkendesh , [K]atror , [R]reth , [T]rekendesh , [Tr]apez \n");
+
+            figura = Console.ReadLine();
+
+            if (figura.ToLower() == "d")
+            {
+                Console.WriteLine("Shkruani gjatesine a brinjes a");
+                double a = double.Parse(Console.ReadLine());
+                
+                Console.WriteLine("Shkruani gjatesine a brinjes b");
+                double b = double.Parse(Console.ReadLine());
+            
+                Console.WriteLine($"Perimetri eshte= {(2*a) + (2 * b)} \nSiperfaqa eshte = {a*b}");
+            }
+            else if (figura.ToLower() == "k")
+            {
+                Console.WriteLine("Shkruani gjatesine a brinjes a");
+                double a = double.Parse(Console.ReadLine());
+
+                Console.WriteLine($"Perimetri eshte = {4*a} \nSiperfaqa eshte = {a*a}");
+            }
+            else if (figura.ToLower() == "r")
+            {
+                Console.WriteLine("Figura e zgjedhur eshte Rrethi\n");
+                Console.WriteLine("Shkruani gjatesine e rrezes :");
+                double r = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Shkruani 17 numrat e pare te π ");
+                Thread.Sleep(3000);
+                Console.WriteLine(" Hahahaha, bej shaka \n");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Perimetri i rrethit me rreze {r} eshte = {2 * Math.PI * r} \n" +
+                                  $"Siperfaqa eshte = {Math.PI * (r*r)} ");
+            }
+            else if (figura.ToLower() == "t")
+            {
+                double a = 0;
+                double b = 0;
+                double c = 0;
+                do
+                {
+                    Console.WriteLine("Shkruani gjatesine brinjes a:");
+                    a = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Shkruani gjatesine e brinjes b");
+                    b = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Shrkuani gjatesine e brinjes c");
+                    c = double.Parse(Console.ReadLine());
+
+                    if (a+b<=c || a+c<=b || b+c<=a)
+                    {
+                        Console.WriteLine("Brinjet e dhena nuk formojne nje trekendesh te vlefshem");   
+                    }
+                } while (a+b<=c || a+c<=b || b+c<=a);
+            
+                //Llogarisim perimetrin
+                double p = a + b + c;
+                // Llogarisim gjysme-perimetrin
+                double g = p / 2;
+            
+                //Llogarisim Siperfaqen
+                double s = Math.Sqrt(g * (g - a) * (g - b) * (g - c));
+            
+                Console.WriteLine($"Perimetri i trekendeshit eshte : {p} \n" +
+                                  $"Siperfaqa eshte = {s}");
+
+            }
+            else if (figura.ToLower() == "tr")
+            {
+                Console.WriteLine("Shkruani gjatesine brinjes a:");
+                double a = double.Parse(Console.ReadLine());
+                Console.WriteLine("Shkruani gjatesine e brinjes b");
+                double b = double.Parse(Console.ReadLine());
+                Console.WriteLine("Shrkuani gjatesine e brinjes c");
+                double c = double.Parse(Console.ReadLine());
+                Console.WriteLine("Shrkuani gjatesine e brinjes d");
+                double d = double.Parse(Console.ReadLine());
+            
+                double p = a + b + c + d;
+
+                double s = 0.25 * Math.Sqrt((a + c) * (b + d) * (a + b - c + d) * (a - b + c + d));
+            
+                Console.WriteLine($"Perimetri i trapezit eshte : {p} \n" +
+                                  $"Siperfaqa eshte = {s}");
+            
+            }
+            else
+            {
+                Console.WriteLine("Shkronje e vendosur eshte e gabuar:");
+            }
+        } while (!(figura.ToLower() == "d"|| figura.ToLower() == "k" || figura.ToLower() == "r" || figura.ToLower() == "t" || figura.ToLower() == "tr"));
+
+        Console.WriteLine("Deshironi te riprovoni? [Y/N]");
+        string prgj = Console.ReadLine();
+
+        if (prgj.ToLower() == "y")
+        {
+            Ushtrimi5();
+        }
+        else
+        {
+            Console.WriteLine("bye bye");
+        }
+    }
+    
+}
+
+public class Ushtrim6
+{
+    /*Kembimi valutor*/
+    private static readonly HttpClient client = new HttpClient();
+
+    public static async Task<double> GetExchangeRateAsync(string apiKey, string baseCurrency, string targetCurrency){
+        
+        string url = $"https://v6.exchangerate-api.com/v6/{apiKey}/latest/{baseCurrency}";
+
+        try
+        {
+            var response = await client.GetStringAsync(url);
+            var data = JObject.Parse(response);
+            var exchangeRate = data["conversion_rates"][targetCurrency].Value<double>();
+            return exchangeRate;
+            
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine("Error fetching exchange rates:" + e.Message);
+            return -1;
+        }
+    }
+
+}
+
+public class Ushtrim7
+{
+    /*Libraria*/
+    public void Ushtrimi7()
+    { 
+        string[,] librat = new string[3, 3];
+
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine($"Vendos te dhenat per librin nr {1+i}");
+            
+            Console.Write("Titulli: ");
+            librat[i, 0] = Console.ReadLine();
+            
+            Console.Write("Autori: ");
+            librat[i, 1] = Console.ReadLine();
+            
+            Console.Write("Cmimi: ");
+            librat[i, 2] = Console.ReadLine();
+            
+        }
+        Console.WriteLine("\nTe dhenat e librave te futur:");
+        Console.WriteLine("Titulli\t\tAutori\t\tCmimi");
+
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine($"{librat[i, 0]}\t\t{librat[i, 1]}\t\t{librat[i, 2]}");
+
+        }
+    }
+
+     
+    
 }

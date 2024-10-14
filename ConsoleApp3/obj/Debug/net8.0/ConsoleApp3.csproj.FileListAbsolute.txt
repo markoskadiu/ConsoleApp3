@@ -12,3 +12,7 @@ D:\C#\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\refint\ConsoleApp3.dll
 D:\C#\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.pdb
 D:\C#\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.genruntimeconfig.cache
 D:\C#\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ref\ConsoleApp3.dll
+D:\C#\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.sourcelink.json
+D:\C#\ConsoleApp3\ConsoleApp3\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\C#\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.csproj.AssemblyReference.cache
+D:\C#\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleA.88426B56.Up2Date
